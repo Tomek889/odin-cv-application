@@ -24,58 +24,70 @@ export default function EducationForm() {
   return (
     <>
       <form action="">
-        <label htmlFor="school">School/College</label>
-        <input
-          type="text"
-          name="school"
-          id="school"
-          value={formData.school}
-          onChange={handleChange}
-          maxLength={100}
-        />
-        <label htmlFor="degree">Degree</label>
-        <input
-          type="text"
-          name="degree"
-          id="degree"
-          value={formData.degree}
-          onChange={handleChange}
-          maxLength={100}
-        />
-        <label htmlFor="location">Location</label>
-        <input
-          type="text"
-          name="location"
-          id="location"
-          value={formData.location}
-          onChange={handleChange}
-          maxLength={100}
-        />
-        <label htmlFor="startDate">Start Date</label>
-        <input
-          type="month"
-          name="startDate"
-          id="startDate"
-          value={formData.startDate}
-          onChange={handleChange}
-        />
-        <label htmlFor="endDate">End Date</label>
-        <input
-          type="month"
-          name="endDate"
-          id="endDate"
-          value={formData.endDate}
-          onChange={handleChange}
-        />
-        {isEditing ? (
-          <button type="button" onClick={handleEdit}>
-            Submit
-          </button>
-        ) : (
-          <button type="button" onClick={handleEdit}>
-            Edit
-          </button>
-        )}
+        <div>
+          <label htmlFor="school">School/College</label>
+          <input
+            type="text"
+            name="school"
+            id="school"
+            value={formData.school}
+            onChange={handleChange}
+            maxLength={100}
+          />
+        </div>
+        <div>
+          <label htmlFor="degree">Degree</label>
+          <input
+            type="text"
+            name="degree"
+            id="degree"
+            value={formData.degree}
+            onChange={handleChange}
+            maxLength={100}
+          />
+        </div>
+        <div>
+          <label htmlFor="location">Location</label>
+          <input
+            type="text"
+            name="location"
+            id="location"
+            value={formData.location}
+            onChange={handleChange}
+            maxLength={100}
+          />
+        </div>
+        <div>
+          <label htmlFor="startDate">Start Date</label>
+          <input
+            type="month"
+            name="startDate"
+            id="startDate"
+            value={formData.startDate}
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="endDate">End Date</label>
+          <input
+            type="month"
+            name="endDate"
+            id="endDate"
+            value={formData.endDate}
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          {isEditing ? (
+            <button type="button" onClick={handleEdit}>
+              Submit
+            </button>
+          ) : (
+            <button type="button" onClick={handleEdit}>
+              Edit
+            </button>
+          )}
+        </div>
       </form>
     </>
   );

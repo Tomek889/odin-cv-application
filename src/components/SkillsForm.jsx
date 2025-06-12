@@ -17,22 +17,26 @@ export default function SkillsForm() {
   return (
     <>
       <form action="">
-        <textarea
-          name="skills"
-          id="skills"
-          value={formData.skills}
-          onChange={handleChange}
-          maxLength={400}
-        ></textarea>
-        {isEditing ? (
-          <button type="button" onClick={handleEdit}>
-            Submit
-          </button>
-        ) : (
-          <button type="button" onClick={handleEdit}>
-            Edit
-          </button>
-        )}
+        <div>
+          <textarea
+            name="skills"
+            id="skills"
+            value={formData.skills}
+            onChange={handleChange}
+            maxLength={400}
+          ></textarea>
+        </div>
+        <div>
+          {isEditing ? (
+            <button type="button" onClick={handleEdit}>
+              Submit
+            </button>
+          ) : (
+            <button type="button" onClick={handleEdit}>
+              Edit
+            </button>
+          )}
+        </div>
       </form>
     </>
   );

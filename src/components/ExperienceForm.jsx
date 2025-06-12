@@ -20,40 +20,49 @@ export default function ExperienceForm() {
   return (
     <>
       <form action="">
-        <label htmlFor="name">Name</label>
-        <input
-          type="text"
-          name="name"
-          id="name"
-          value={formData.name}
-          onChange={handleChange}
-          maxLength={100}
-        />
-        <label htmlFor="name">Type</label>
-        <input
-          type="text"
-          name="type"
-          id="type"
-          value={formData.type}
-          onChange={handleChange}
-          maxLength={100}
-        />
-        <textarea
-          name="description"
-          id="description"
-          value={formData.description}
-          onChange={handleChange}
-          maxLength={400}
-        ></textarea>
-        {isEditing ? (
-          <button type="button" onClick={handleEdit}>
-            Submit
-          </button>
-        ) : (
-          <button type="button" onClick={handleEdit}>
-            Edit
-          </button>
-        )}
+        <div>
+          <label htmlFor="name">Name</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            value={formData.name}
+            onChange={handleChange}
+            maxLength={100}
+          />
+        </div>
+        <div>
+          <label htmlFor="name">Type</label>
+          <input
+            type="text"
+            name="type"
+            id="type"
+            value={formData.type}
+            onChange={handleChange}
+            maxLength={100}
+          />
+        </div>
+        <div>
+          <label htmlFor="description">Description</label>
+          <textarea
+            name="description"
+            id="description"
+            value={formData.description}
+            onChange={handleChange}
+            maxLength={400}
+          ></textarea>
+        </div>
+        <div>
+          {isEditing ? (
+            <button type="button" onClick={handleEdit}>
+              Submit
+            </button>
+          ) : (
+            <button type="button" onClick={handleEdit}>
+              Edit
+            </button>
+          )}
+        </div>
       </form>
     </>
   );
