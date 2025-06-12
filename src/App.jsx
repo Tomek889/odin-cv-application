@@ -57,26 +57,41 @@ function App() {
           />
         </Form>
         <Form>
-          <h2>Education</h2>
+          <div className="heading">
+            <h2>Education</h2>
+            <span className="material-symbols-outlined">add</span>
+          </div>
           <EducationForm
             educationData={educationData}
             setEducationData={setEducationData}
           />
         </Form>
         <Form>
-          <h2>Skills</h2>
+          <div className="heading">
+            <h2>Skills</h2>
+            <span className="material-symbols-outlined">add</span>
+          </div>
           <SkillsForm skillsData={skillsData} setSkillsData={setSkillsData} />
         </Form>
         <Form>
-          <h2>Experience</h2>
+          <div className="heading">
+            <h2>Experience</h2>
+            <span className="material-symbols-outlined">add</span>
+          </div>
           <ExperienceForm
             experienceData={experienceData}
             setExperienceData={setExperienceData}
           />
         </Form>
         <Form>
-          <h2>Projects</h2>
-          <ProjectsForm projectsData={projectsData} setProjectsData={setProjectsData}/>
+          <div className="heading">
+            <h2>Projects</h2>
+            <span className="material-symbols-outlined">add</span>
+          </div>
+          <ProjectsForm
+            projectsData={projectsData}
+            setProjectsData={setProjectsData}
+          />
         </Form>
       </div>
       <div>

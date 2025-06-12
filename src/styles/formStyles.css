@@ -36,6 +36,7 @@ label {
   background-color: #bbbfca;
   border-radius: 10px;
   cursor: pointer;
+  font-weight: 500;
 }
 
 .disabled input,
@@ -48,6 +49,17 @@ label {
 .form label {
   font-size: 1.2rem;
   margin-bottom: 4px;
+}
+
+.material-symbols-outlined {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 @media (max-width: 950px) {
