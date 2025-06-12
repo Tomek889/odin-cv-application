@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Skills() {
+export default function SkillsForm() {
   const [formData, setFormData] = useState({
     skills: "Skill 1, Skill 2, Skill 3, Skill 4, Skill 5",
   });

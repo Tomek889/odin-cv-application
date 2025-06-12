@@ -1,16 +1,18 @@
 import "./App.css";
 import GeneralInfoForm from "./components/GeneralInfoForm";
 import EducationForm from "./components/EducationForm";
-import Skills from "./components/Skills";
+import SkillsForm from "./components/SkillsForm";
 import ExperienceForm from "./components/ExperienceForm";
+import ProjectsForm from "./components/Projects";
 
 function App() {
   return (
     <>
       <GeneralInfoForm />
       <EducationForm />
-      <Skills />
+      <SkillsForm />
       <ExperienceForm />
+      <ProjectsForm />
     </>
   );
 }
