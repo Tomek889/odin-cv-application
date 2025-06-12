@@ -7,7 +7,7 @@ export default function Skills() {
   const [isEditing, setIsEditing] = useState(false);
 
   function handleChange(e) {
-    setFormData({...formData, [e.target.name]: e.target.value})
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   }
 
   function handleEdit() {
@@ -19,12 +19,12 @@ export default function Skills() {
       <h2>Skills</h2>
       <form action="">
         <textarea
-          type=""
           name="skills"
           id="skills"
           value={formData.skills}
           onChange={handleChange}
-          maxLength={400}></textarea>
+          maxLength={400}
+        ></textarea>
         {isEditing ? (
           <button type="button" onClick={handleEdit}>
             Submit
