@@ -1,8 +1,9 @@
 .form {
-  width: 40vw;
+  width: calc(40vw - 60px);
   padding: 30px;
   background-color: #e8e8e8;
   border-radius: 20px;
+  margin: 30px;
 }
 
 .form div,
@@ -51,6 +52,6 @@ label {
 
 @media (max-width: 950px) {
   .form {
-    width: 100vw;
+    width: calc(100vw - 60px);
   }
 }

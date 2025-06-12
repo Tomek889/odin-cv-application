@@ -17,7 +17,7 @@ function App() {
     name: "Your Name",
     email: "your@email.com",
     phone: "+0123456789",
-    linkedin: "https://www.linkedin.com/in/yourusername/",
+    linkedin: "https://www.linkedin.com/in/yourusername",
     github: "https://github.com/yourusername",
   });
 
