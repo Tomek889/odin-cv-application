@@ -9,3 +9,13 @@ body {
 h2 {
   font-size: 1.65rem;
 }
+
+.app {
+  display: flex;
+}
+
+@media (max-width: 950px) {
+  .app {
+    display: block;
+  }
+}

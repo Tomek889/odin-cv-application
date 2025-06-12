@@ -1,17 +1,11 @@
 import { useState } from "react";
 
-export default function ExperienceForm() {
-  const [formData, setFormData] = useState({
-    name: "Company Name",
-    type: "Type of the Job",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus ratione in reprehenderit quos dolores blanditiis dolor esse! Commodi omnis quibusdam eaque delectus doloribus! Rem quam odit facere saepe reiciendis dolorum.",
-  });
+export default function ExperienceForm({ experienceData, setExperienceData }) {
   const [isEditing, setIsEditing] = useState(false);
   const [isActive, setIsActive] = useState(false);
 
   function handleChange(e) {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setExperienceData({ ...experienceData, [e.target.name]: e.target.value });
   }
 
   function handleEdit() {
@@ -21,14 +15,14 @@ export default function ExperienceForm() {
 
   return (
     <>
-      <form action="" className={!isActive ? "disabled" : ''}>
+      <form action="" className={!isActive ? "disabled" : ""}>
         <div>
           <label htmlFor="name">Name</label>
           <input
             type="text"
             name="name"
             id="name"
-            value={formData.name}
+            value={experienceData.name}
             onChange={handleChange}
             maxLength={100}
           />
@@ -39,7 +33,7 @@ export default function ExperienceForm() {
             type="text"
             name="type"
             id="type"
-            value={formData.type}
+            value={experienceData.type}
             onChange={handleChange}
             maxLength={100}
           />
@@ -49,7 +43,7 @@ export default function ExperienceForm() {
           <textarea
             name="description"
             id="description"
-            value={formData.description}
+            value={experienceData.description}
             onChange={handleChange}
             maxLength={400}
           ></textarea>

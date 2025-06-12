@@ -1,14 +1,11 @@
 import { useState } from "react";
 
-export default function SkillsForm() {
-  const [formData, setFormData] = useState({
-    skills: "Skill 1, Skill 2, Skill 3, Skill 4, Skill 5",
-  });
+export default function SkillsForm({skillsData, setSkillsData}) {
   const [isEditing, setIsEditing] = useState(false);
   const [isActive, setIsActive] = useState(false);
 
   function handleChange(e) {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setSkillsData({ ...skillsData, [e.target.name]: e.target.value });
   }
 
   function handleEdit() {
@@ -23,7 +20,7 @@ export default function SkillsForm() {
           <textarea
             name="skills"
             id="skills"
-            value={formData.skills}
+            value={skillsData.skills}
             onChange={handleChange}
             maxLength={400}
           ></textarea>

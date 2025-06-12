@@ -1,16 +1,11 @@
 import { useState } from "react";
 
-export default function ProjectsForm() {
-  const [formData, setFormData] = useState({
-    name: "Project Name",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus ratione in reprehenderit quos dolores blanditiis dolor esse! Commodi omnis quibusdam eaque delectus doloribus! Rem quam odit facere saepe reiciendis dolorum.",
-  });
+export default function ProjectsForm({projectsData, setProjectsData}) {
   const [isEditing, setIsEditing] = useState(false);
   const [isActive, setIsActive] = useState(false);
 
   function handleChange(e) {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setProjectsData({ ...projectsData, [e.target.name]: e.target.value });
   }
 
   function handleEdit() {
@@ -27,7 +22,7 @@ export default function ProjectsForm() {
             type="text"
             name="name"
             id="name"
-            value={formData.name}
+            value={projectsData.name}
             onChange={handleChange}
             maxLength={100}
           />
@@ -37,7 +32,7 @@ export default function ProjectsForm() {
           <textarea
             name="description"
             id="description"
-            value={formData.description}
+            value={projectsData.description}
             onChange={handleChange}
             maxLength={400}
           ></textarea>

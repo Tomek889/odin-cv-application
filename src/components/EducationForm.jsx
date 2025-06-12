@@ -1,19 +1,12 @@
 import { useState } from "react";
 
-export default function EducationForm() {
-  const [formData, setFormData] = useState({
-    school: "Your School/College",
-    degree: "Your Degree",
-    location: "Location",
-    startDate: "2022-08",
-    endDate: "2025-05",
-  });
+export default function EducationForm({ educationData, setEducationData }) {
   const [isEditing, setIsEditing] = useState(false);
   const [isActive, setIsActive] = useState(false);
 
   function handleChange(e) {
-    setFormData({
-      ...formData,
+    setEducationData({
+      ...educationData,
       [e.target.name]: e.target.value,
     });
   }
@@ -25,14 +18,14 @@ export default function EducationForm() {
 
   return (
     <>
-      <form action="" className={!isActive ? "disabled" : ''}>
+      <form action="" className={!isActive ? "disabled" : ""}>
         <div>
           <label htmlFor="school">School/College</label>
           <input
             type="text"
             name="school"
             id="school"
-            value={formData.school}
+            value={educationData.school}
             onChange={handleChange}
             maxLength={100}
           />
@@ -43,7 +36,7 @@ export default function EducationForm() {
             type="text"
             name="degree"
             id="degree"
-            value={formData.degree}
+            value={educationData.degree}
             onChange={handleChange}
             maxLength={100}
           />
@@ -54,7 +47,7 @@ export default function EducationForm() {
             type="text"
             name="location"
             id="location"
-            value={formData.location}
+            value={educationData.location}
             onChange={handleChange}
             maxLength={100}
           />
@@ -65,7 +58,7 @@ export default function EducationForm() {
             type="month"
             name="startDate"
             id="startDate"
-            value={formData.startDate}
+            value={educationData.startDate}
             onChange={handleChange}
           />
         </div>
@@ -75,7 +68,7 @@ export default function EducationForm() {
             type="month"
             name="endDate"
             id="endDate"
-            value={formData.endDate}
+            value={educationData.endDate}
             onChange={handleChange}
           />
         </div>

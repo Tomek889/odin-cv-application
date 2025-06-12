@@ -1,9 +1,8 @@
 .form {
-  width: 40%;
+  width: 40vw;
   padding: 30px;
   background-color: #e8e8e8;
   border-radius: 20px;
-  margin: 30px;
 }
 
 .form div,

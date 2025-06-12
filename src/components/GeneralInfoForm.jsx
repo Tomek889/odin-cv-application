@@ -1,19 +1,12 @@
 import { useState } from "react";
 
-export default function GeneralInfoForm() {
-  const [formData, setFormData] = useState({
-    name: "Your Name",
-    email: "your@email.com",
-    phone: "+0123456789",
-    linkedin: "https://www.linkedin.com/in/yourusername/",
-    github: "https://github.com/yourusername",
-  });
+export default function GeneralInfoForm({ generalData, setGeneralData }) {
   const [isEditing, setIsEditing] = useState(false);
   const [isActive, setIsActive] = useState(false);
 
   function handleChange(e) {
-    setFormData({
-      ...formData,
+    setGeneralData({
+      ...generalData,
       [e.target.name]: e.target.value,
     });
   }
@@ -25,14 +18,14 @@ export default function GeneralInfoForm() {
 
   return (
     <>
-      <form action="" className={!isActive ? "disabled" : ''}>
+      <form action="" className={!isActive ? "disabled" : ""}>
         <div>
           <label htmlFor="name">Name</label>
           <input
             type="text"
             name="name"
             id="name"
-            value={formData.name}
+            value={generalData.name}
             onChange={handleChange}
             maxLength={50}
           />
@@ -43,7 +36,7 @@ export default function GeneralInfoForm() {
             type="email"
             name="email"
             id="email"
-            value={formData.email}
+            value={generalData.email}
             onChange={handleChange}
             placeholder="your@email.com"
             maxLength={100}
@@ -55,7 +48,7 @@ export default function GeneralInfoForm() {
             type="text"
             name="phone"
             id="phone"
-            value={formData.phone}
+            value={generalData.phone}
             onChange={handleChange}
             maxLength={30}
           />
@@ -66,7 +59,7 @@ export default function GeneralInfoForm() {
             type="url"
             name="linkedin"
             id="linkedin"
-            value={formData.linkedin}
+            value={generalData.linkedin}
             onChange={handleChange}
             placeholder="https://www.linkedin.com/in/yourusername/"
             maxLength={180}
@@ -78,7 +71,7 @@ export default function GeneralInfoForm() {
             type="url"
             name="github"
             id="github"
-            value={formData.github}
+            value={generalData.github}
             onChange={handleChange}
             placeholder="https://github.com/yourusername"
             maxLength={180}
