@@ -18,7 +18,7 @@ export default function SkillsForm() {
 
   return (
     <>
-      <form action="" className={!isActive && "disabled"}>
+      <form action="" className={!isActive ? "disabled" : ''}>
         <div>
           <textarea
             name="skills"

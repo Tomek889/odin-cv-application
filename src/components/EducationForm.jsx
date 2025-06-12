@@ -25,7 +25,7 @@ export default function EducationForm() {
 
   return (
     <>
-      <form action="" className={!isActive && "disabled"}>
+      <form action="" className={!isActive ? "disabled" : ''}>
         <div>
           <label htmlFor="school">School/College</label>
           <input

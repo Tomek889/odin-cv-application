@@ -9,7 +9,7 @@ import SkillsForm from "./components/SkillsForm";
 import ExperienceForm from "./components/ExperienceForm";
 import ProjectsForm from "./components/ProjectsForm";
 import Form from "./components/Form";
-import ResumePreview from "./components"
+import ResumePreview from "./components/ResumePreview";
 
 function App() {
   return (
@@ -36,9 +36,7 @@ function App() {
           <ProjectsForm />
         </Form>
       </div>
-      <div>
-
-      </div>
+      <div></div>
     </>
   );
 }

@@ -25,7 +25,7 @@ export default function GeneralInfoForm() {
 
   return (
     <>
-      <form action="" className={!isActive && "disabled"}>
+      <form action="" className={!isActive ? "disabled" : ''}>
         <div>
           <label htmlFor="name">Name</label>
           <input

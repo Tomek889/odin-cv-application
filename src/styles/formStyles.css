@@ -22,7 +22,7 @@ label {
 }
 
 .form textarea {
-  height: 140px;
+  min-height: 140px;
 }
 
 .form textarea {
@@ -50,7 +50,7 @@ label {
   margin-bottom: 4px;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 950px) {
   .form {
     width: 100vw;
   }
