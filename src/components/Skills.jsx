@@ -1,0 +1,40 @@
+import { useState } from "react";
+
+export default function Skills() {
+  const [formData, setFormData] = useState({
+    skills: "Skill 1, Skill 2, Skill 3, Skill 4, Skill 5",
+  });
+  const [isEditing, setIsEditing] = useState(false);
+
+  function handleChange(e) {
+    setFormData({...formData, [e.target.name]: e.target.value})
+  }
+
+  function handleEdit() {
+    setIsEditing(!isEditing);
+  }
+
+  return (
+    <>
+      <h2>Skills</h2>
+      <form action="">
+        <textarea
+          type=""
+          name="skills"
+          id="skills"
+          value={formData.skills}
+          onChange={handleChange}
+          maxLength={400}></textarea>
+        {isEditing ? (
+          <button type="button" onClick={handleEdit}>
+            Submit
+          </button>
+        ) : (
+          <button type="button" onClick={handleEdit}>
+            Edit
+          </button>
+        )}
+      </form>
+    </>
+  );
+}
