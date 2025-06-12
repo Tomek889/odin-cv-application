@@ -24,3 +24,7 @@ label {
 .form textarea {
     height: 140px;
 }
+
+.form textarea {
+    resize: none;
+}
