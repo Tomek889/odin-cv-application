@@ -9,6 +9,7 @@ export default function EducationForm() {
     endDate: "2025-05",
   });
   const [isEditing, setIsEditing] = useState(false);
+  const [isActive, setIsActive] = useState(false);
 
   function handleChange(e) {
     setFormData({
@@ -19,11 +20,12 @@ export default function EducationForm() {
 
   function handleEdit() {
     setIsEditing(!isEditing);
+    setIsActive(!isActive);
   }
 
   return (
     <>
-      <form action="">
+      <form action="" className={!isActive && "disabled"}>
         <div>
           <label htmlFor="school">School/College</label>
           <input

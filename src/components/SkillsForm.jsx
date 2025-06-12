@@ -5,6 +5,7 @@ export default function SkillsForm() {
     skills: "Skill 1, Skill 2, Skill 3, Skill 4, Skill 5",
   });
   const [isEditing, setIsEditing] = useState(false);
+  const [isActive, setIsActive] = useState(false);
 
   function handleChange(e) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -12,11 +13,12 @@ export default function SkillsForm() {
 
   function handleEdit() {
     setIsEditing(!isEditing);
+    setIsActive(!isActive);
   }
 
   return (
     <>
-      <form action="">
+      <form action="" className={!isActive && "disabled"}>
         <div>
           <textarea
             name="skills"

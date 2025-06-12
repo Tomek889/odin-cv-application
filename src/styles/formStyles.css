@@ -1,30 +1,56 @@
 .form {
-    width: 40%;
-    padding: 30px;
-    background-color: #E8E8E8;
-    margin: 30px;
-    border-radius: 20px;
+  width: 40%;
+  padding: 30px;
+  background-color: #e8e8e8;
+  border-radius: 20px;
+  margin: 30px;
 }
 
 .form div,
 .form button {
-    margin: 8px 0px;
+  margin: 8px 0px;
 }
 
 label {
-    display: block;
+  display: block;
 }
 
 .form input,
 .form textarea {
-    padding: 6px;
-    width: 100%;
+  padding: 6px;
+  width: 100%;
 }
 
 .form textarea {
-    height: 140px;
+  height: 140px;
 }
 
 .form textarea {
-    resize: none;
+  resize: none;
+}
+
+.form button {
+  border: none;
+  padding: 8px 32px;
+  background-color: #bbbfca;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.disabled input,
+.disabled textarea,
+.disabled label {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.form label {
+  font-size: 1.2rem;
+  margin-bottom: 4px;
+}
+
+@media (max-width: 1000px) {
+  .form {
+    width: 100vw;
+  }
 }
