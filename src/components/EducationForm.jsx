@@ -23,7 +23,6 @@ export default function EducationForm() {
 
   return (
     <>
-      <h2>Education</h2>
       <form action="">
         <label htmlFor="school">School/College</label>
         <input

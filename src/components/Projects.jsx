@@ -18,7 +18,6 @@ export default function ProjectsForm() {
 
   return (
     <>
-      <h2>Projects</h2>
       <form action="">
         <label htmlFor="name">Name</label>
         <input

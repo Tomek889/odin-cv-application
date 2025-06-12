@@ -19,7 +19,6 @@ export default function ExperienceForm() {
 
   return (
     <>
-      <h2>Experience</h2>
       <form action="">
         <label htmlFor="name">Name</label>
         <input

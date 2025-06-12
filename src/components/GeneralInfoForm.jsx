@@ -23,17 +23,19 @@ export default function GeneralInfoForm() {
 
   return (
     <>
-      <h2>General Information</h2>
       <form action="">
-        <label htmlFor="name">Name</label>
-        <input
-          type="text"
-          name="name"
-          id="name"
-          value={formData.name}
-          onChange={handleChange}
-          maxLength={50}
-        />
+        <div>
+          <label htmlFor="name">Name</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            value={formData.name}
+            onChange={handleChange}
+            maxLength={50}
+          />
+        </div>
+        <div>
         <label htmlFor="email">Email</label>
         <input
           type="email"
@@ -44,6 +46,8 @@ export default function GeneralInfoForm() {
           placeholder="your@email.com"
           maxLength={100}
         />
+        </div>
+        <div>
         <label htmlFor="phone">Phone Number</label>
         <input
           type="text"
@@ -53,6 +57,8 @@ export default function GeneralInfoForm() {
           onChange={handleChange}
           maxLength={30}
         />
+        </div>
+        <div>
         <label htmlFor="linkedin">LinkedIn</label>
         <input
           type="url"
@@ -63,6 +69,8 @@ export default function GeneralInfoForm() {
           placeholder="https://www.linkedin.com/in/yourusername/"
           maxLength={180}
         />
+        </div>
+        <div>
         <label htmlFor="github">GitHub</label>
         <input
           type="url"
@@ -73,6 +81,7 @@ export default function GeneralInfoForm() {
           placeholder="https://github.com/yourusername"
           maxLength={180}
         />
+        </div>
         {isEditing ? (
           <button type="button" onClick={handleEdit}>
             Submit
