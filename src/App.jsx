@@ -38,17 +38,27 @@ function App() {
     },
   ]);
 
-  const [skillsData, setSkillsData] = useState([{
-    type: "Type",
-    skills: "Skill 1, Skill 2, Skill 3, Skill 4, Skill 5",
-  }]);
+  const [skillsData, setSkillsData] = useState([
+    {
+      type: "Type",
+      skills: "Skill 1, Skill 2, Skill 3, Skill 4, Skill 5",
+    },
+  ]);
 
-  const [experienceData, setExperienceData] = useState({
-    name: "Company Name",
-    type: "Type of the Job",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus ratione in reprehenderit quos dolores blanditiis dolor esse! Commodi omnis quibusdam eaque delectus doloribus! Rem quam odit facere saepe reiciendis dolorum.",
-  });
+  const [experienceData, setExperienceData] = useState([
+    {
+      name: "Company Name",
+      type: "Type of the Job",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus ratione in reprehenderit quos dolores blanditiis dolor esse! Commodi omnis quibusdam eaque delectus doloribus! Rem quam odit facere saepe reiciendis dolorum.",
+    },
+    {
+      name: "Company Name",
+      type: "Type of the Job",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus ratione in reprehenderit quos dolores blanditiis dolor esse! Commodi omnis quibusdam eaque delectus doloribus! Rem quam odit facere saepe reiciendis dolorum.",
+    },
+  ]);
 
   const [projectsData, setProjectsData] = useState({
     name: "Project Name",
@@ -75,6 +85,18 @@ function App() {
       {
         type: "Type",
         skills: "Skill 1, Skill 2, Skill 3, Skill 4, Skill 5",
+      },
+    ]);
+  }
+
+  function handleAddExperience() {
+    setExperienceData([
+      ...experienceData,
+      {
+        name: "Company Name",
+        type: "Type of the Job",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus ratione in reprehenderit quos dolores blanditiis dolor esse! Commodi omnis quibusdam eaque delectus doloribus! Rem quam odit facere saepe reiciendis dolorum.",
       },
     ]);
   }
@@ -132,12 +154,22 @@ function App() {
         <Form>
           <div className="heading">
             <h2>Experience</h2>
-            <span className="material-symbols-outlined">add</span>
+            <span
+              className="material-symbols-outlined"
+              onClick={handleAddExperience}
+            >
+              add
+            </span>
           </div>
-          <ExperienceForm
-            experienceData={experienceData}
-            setExperienceData={setExperienceData}
-          />
+          {experienceData.map((data, index) => (
+            <ExperienceForm
+              key={index}
+              index={index}
+              experienceData={data}
+              allExperience={experienceData}
+              setExperienceData={setExperienceData}
+            />
+          ))}
         </Form>
         <Form>
           <div className="heading">

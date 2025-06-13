@@ -1,11 +1,21 @@
 import { useState } from "react";
 
-export default function ExperienceForm({ experienceData, setExperienceData }) {
+export default function ExperienceForm({
+  index,
+  experienceData,
+  setExperienceData,
+  allExperience,
+}) {
   const [isEditing, setIsEditing] = useState(false);
   const [isActive, setIsActive] = useState(false);
 
   function handleChange(e) {
-    setExperienceData({ ...experienceData, [e.target.name]: e.target.value });
+    const updated = [...allExperience];
+    updated[index] = {
+      ...updated[index],
+      [e.target.name]: e.target.value,
+    };
+    setExperienceData(updated);
   }
 
   function handleEdit() {
