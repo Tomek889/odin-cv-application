@@ -66,10 +66,18 @@ export default function ResumePreview({
         )}
       </div>
       <div className="projects">
-        <h2>Projects</h2>
-        <hr />
-        <h3>{projectsData.name}</h3>
-        <p>{projectsData.description}</p>
+        {projectsData.length > 0 && (
+          <>
+            <h2>Projects</h2>
+            <hr />
+            {projectsData.map((data, index) => (
+              <div key={index}>
+                <h3>{data.name}</h3>
+                <p>{data.description}</p>
+              </div>
+            ))}
+          </>
+        )}
       </div>
     </div>
   );

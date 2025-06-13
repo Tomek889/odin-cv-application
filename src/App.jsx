@@ -60,11 +60,18 @@ function App() {
     },
   ]);
 
-  const [projectsData, setProjectsData] = useState({
-    name: "Project Name",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus ratione in reprehenderit quos dolores blanditiis dolor esse! Commodi omnis quibusdam eaque delectus doloribus! Rem quam odit facere saepe reiciendis dolorum.",
-  });
+  const [projectsData, setProjectsData] = useState([
+    {
+      name: "Project Name",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus ratione in reprehenderit quos dolores blanditiis dolor esse! Commodi omnis quibusdam eaque delectus doloribus! Rem quam odit facere saepe reiciendis dolorum.",
+    },
+    {
+      name: "Project Name",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus ratione in reprehenderit quos dolores blanditiis dolor esse! Commodi omnis quibusdam eaque delectus doloribus! Rem quam odit facere saepe reiciendis dolorum.",
+    },
+  ]);
 
   function handleAddEducation() {
     setEducationData([
@@ -95,6 +102,17 @@ function App() {
       {
         name: "Company Name",
         type: "Type of the Job",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus ratione in reprehenderit quos dolores blanditiis dolor esse! Commodi omnis quibusdam eaque delectus doloribus! Rem quam odit facere saepe reiciendis dolorum.",
+      },
+    ]);
+  }
+
+  function handleAddProjects() {
+    setProjectsData([
+      ...projectsData,
+      {
+        name: "Project Name",
         description:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus ratione in reprehenderit quos dolores blanditiis dolor esse! Commodi omnis quibusdam eaque delectus doloribus! Rem quam odit facere saepe reiciendis dolorum.",
       },
@@ -174,12 +192,22 @@ function App() {
         <Form>
           <div className="heading">
             <h2>Projects</h2>
-            <span className="material-symbols-outlined">add</span>
+            <span
+              className="material-symbols-outlined"
+              onClick={handleAddProjects}
+            >
+              add
+            </span>
           </div>
-          <ProjectsForm
-            projectsData={projectsData}
-            setProjectsData={setProjectsData}
-          />
+          {projectsData.map((data, index) => (
+            <ProjectsForm
+              key={index}
+              index={index}
+              projectsData={data}
+              allProjects={projectsData}
+              setProjectsData={setProjectsData}
+            />
+          ))}
         </Form>
       </div>
       <div>

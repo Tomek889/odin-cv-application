@@ -1,11 +1,21 @@
 import { useState } from "react";
 
-export default function ProjectsForm({projectsData, setProjectsData}) {
+export default function ProjectsForm({
+  index,
+  projectsData,
+  setProjectsData,
+  allProjects,
+}) {
   const [isEditing, setIsEditing] = useState(false);
   const [isActive, setIsActive] = useState(false);
 
   function handleChange(e) {
-    setProjectsData({ ...projectsData, [e.target.name]: e.target.value });
+    const updated = [...allProjects];
+    updated[index] = {
+      ...updated[index],
+      [e.target.name]: e.target.value,
+    };
+    setProjectsData(updated);
   }
 
   function handleEdit() {
@@ -15,7 +25,7 @@ export default function ProjectsForm({projectsData, setProjectsData}) {
 
   return (
     <>
-      <form action="" className={!isActive ? "disabled" : ''}>
+      <form action="" className={!isActive ? "disabled" : ""}>
         <div>
           <label htmlFor="name">Name</label>
           <input
