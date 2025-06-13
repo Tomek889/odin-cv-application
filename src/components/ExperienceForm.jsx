@@ -23,6 +23,11 @@ export default function ExperienceForm({
     setIsActive(!isActive);
   }
 
+  function handleDelete() {
+    const updated = allExperience.filter((_, i) => i !== index);
+    setExperienceData(updated);
+  }
+
   return (
     <>
       <form action="" className={!isActive ? "disabled" : ""}>
@@ -68,6 +73,9 @@ export default function ExperienceForm({
               Edit
             </button>
           )}
+          <button type="button" onClick={handleDelete} className="deleteButton">
+            Delete
+          </button>
         </div>
       </form>
     </>

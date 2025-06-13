@@ -65,6 +65,11 @@ label {
   align-items: center;
 }
 
+.deleteButton {
+  display: inline-block;
+  margin-left: 20px !important;
+}
+
 @media (max-width: 950px) {
   .form {
     width: calc(100vw - 60px);

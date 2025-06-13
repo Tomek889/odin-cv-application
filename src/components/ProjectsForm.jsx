@@ -23,6 +23,11 @@ export default function ProjectsForm({
     setIsActive(!isActive);
   }
 
+  function handleDelete() {
+    const updated = allProjects.filter((_, i) => i !== index);
+    setProjectsData(updated);
+  }
+
   return (
     <>
       <form action="" className={!isActive ? "disabled" : ""}>
@@ -57,6 +62,9 @@ export default function ProjectsForm({
               Edit
             </button>
           )}
+          <button type="button" onClick={handleDelete} className="deleteButton">
+            Delete
+          </button>
         </div>
       </form>
     </>

@@ -23,6 +23,11 @@ export default function EducationForm({
     setIsActive(!isActive);
   }
 
+  function handleDelete() {
+    const updated = allEducation.filter((_, i) => i !== index);
+    setEducationData(updated);
+  }
+
   return (
     <>
       <form action="" className={!isActive ? "disabled" : ""}>
@@ -89,6 +94,9 @@ export default function EducationForm({
               Edit
             </button>
           )}
+          <button type="button" onClick={handleDelete} className="deleteButton">
+            Delete
+          </button>
         </div>
       </form>
     </>

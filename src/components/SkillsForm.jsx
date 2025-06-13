@@ -23,6 +23,11 @@ export default function SkillsForm({
     setIsActive(!isActive);
   }
 
+  function handleDelete() {
+    const updated = allSkills.filter((_, i) => i !== index);
+    setSkillsData(updated);
+  }
+
   return (
     <>
       <form action="" className={!isActive ? "disabled" : ""}>
@@ -57,6 +62,9 @@ export default function SkillsForm({
               Edit
             </button>
           )}
+          <button type="button" onClick={handleDelete} className="deleteButton">
+            Delete
+          </button>
         </div>
       </form>
     </>
