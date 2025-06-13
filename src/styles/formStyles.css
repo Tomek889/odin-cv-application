@@ -6,6 +6,9 @@
   margin: 30px;
 }
 
+form {
+  margin-bottom: 30px;
+}
 .form div,
 .form button {
   margin: 8px 0px;
@@ -57,9 +60,9 @@ label {
 }
 
 .heading {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 @media (max-width: 950px) {

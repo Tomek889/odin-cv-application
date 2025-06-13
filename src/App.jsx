@@ -21,13 +21,22 @@ function App() {
     github: "https://github.com/yourusername",
   });
 
-  const [educationData, setEducationData] = useState({
-    school: "Your School/College",
-    degree: "Your Degree",
-    location: "Location",
-    startDate: "2022-08",
-    endDate: "2025-05",
-  });
+  const [educationData, setEducationData] = useState([
+    {
+      school: "Your School/College",
+      degree: "Your Degree",
+      location: "Location",
+      startDate: "2022-08",
+      endDate: "2025-05",
+    },
+    {
+      school: "Your School/College",
+      degree: "Your Degree",
+      location: "Location",
+      startDate: "2022-08",
+      endDate: "2025-05",
+    },
+  ]);
 
   const [skillsData, setSkillsData] = useState({
     type: "Type",
@@ -47,8 +56,17 @@ function App() {
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus ratione in reprehenderit quos dolores blanditiis dolor esse! Commodi omnis quibusdam eaque delectus doloribus! Rem quam odit facere saepe reiciendis dolorum.",
   });
 
-  function handleAdd() {
-
+  function handleAddEducation() {
+    setEducationData([
+      ...educationData,
+      {
+        school: "Your School/College",
+        degree: "Your Degree",
+        location: "Location",
+        startDate: "2022-08",
+        endDate: "2025-05",
+      },
+    ]);
   }
 
   return (
@@ -64,12 +82,22 @@ function App() {
         <Form>
           <div className="heading">
             <h2>Education</h2>
-            <span className="material-symbols-outlined" onClick={handleAdd}>add</span>
+            <span
+              className="material-symbols-outlined"
+              onClick={handleAddEducation}
+            >
+              add
+            </span>
           </div>
-          <EducationForm
-            educationData={educationData}
-            setEducationData={setEducationData}
-          />
+          {educationData.map((data, index) => (
+            <EducationForm
+              key={index}
+              index={index}
+              educationData={data}
+              allEducation={educationData}
+              setEducationData={setEducationData}
+            />
+          ))}
         </Form>
         <Form>
           <div className="heading">

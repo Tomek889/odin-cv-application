@@ -10,32 +10,48 @@ export default function ResumePreview({
       <div className="general">
         <h1>{generalData.name}</h1>
         <p>
-            <span>{generalData.email}</span>
-            <span style={{ marginLeft: "20px"}}>{generalData.phone}</span>
+          <span>{generalData.email}</span>
+          <span style={{ marginLeft: "20px" }}>{generalData.phone}</span>
         </p>
         <p>
-            <span>{generalData.linkedin}</span>
-            <span style={{ marginLeft: "20px"}}>{generalData.github}</span>
+          <span>{generalData.linkedin}</span>
+          <span style={{ marginLeft: "20px" }}>{generalData.github}</span>
         </p>
       </div>
       <div className="education">
-        <h2>Education</h2><hr />
-        <h3>{educationData.school}  |  {educationData.startDate} - {educationData.endDate}</h3>
-        <p>{educationData.degree}</p>
-        <p>{educationData.location}</p>
+        {educationData.length > 0 && (
+          <>
+            <h2>Education</h2>
+            <hr />
+            {educationData.map((data, index) => (
+              <div key={index}>
+                <h3>
+                  {data.school} | {data.startDate} - {data.endDate}
+                </h3>
+                <p>{data.degree}</p>
+                <p>{data.location}</p>
+              </div>
+            ))}
+          </>
+        )}
       </div>
       <div className="skills">
-        <h2>Skills</h2><hr />
+        <h2>Skills</h2>
+        <hr />
         <h3>{skillsData.type}</h3>
         <p>{skillsData.skills}</p>
       </div>
       <div className="experience">
-        <h2>Experience</h2><hr />
-        <h3>{experienceData.name}  |  {experienceData.type}</h3>
+        <h2>Experience</h2>
+        <hr />
+        <h3>
+          {experienceData.name} | {experienceData.type}
+        </h3>
         <p>{experienceData.description}</p>
       </div>
       <div className="projects">
-        <h2>Projects</h2><hr />
+        <h2>Projects</h2>
+        <hr />
         <h3>{projectsData.name}</h3>
         <p>{projectsData.description}</p>
       </div>

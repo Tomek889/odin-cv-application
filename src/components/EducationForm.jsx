@@ -1,14 +1,21 @@
 import { useState } from "react";
 
-export default function EducationForm({ educationData, setEducationData }) {
+export default function EducationForm({
+  index,
+  educationData,
+  setEducationData,
+  allEducation,
+}) {
   const [isEditing, setIsEditing] = useState(false);
   const [isActive, setIsActive] = useState(false);
 
   function handleChange(e) {
-    setEducationData({
-      ...educationData,
+    const updated = [...allEducation];
+    updated[index] = {
+      ...updated[index],
       [e.target.name]: e.target.value,
-    });
+    };
+    setEducationData(updated);
   }
 
   function handleEdit() {
