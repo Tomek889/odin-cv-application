@@ -26,7 +26,8 @@ export default function ResumePreview({
       </div>
       <div className="skills">
         <h2>Skills</h2><hr />
-        {skillsData.skills}
+        <h3>{skillsData.type}</h3>
+        <p>{skillsData.skills}</p>
       </div>
       <div className="experience">
         <h2>Experience</h2><hr />

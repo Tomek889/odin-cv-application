@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function SkillsForm({skillsData, setSkillsData}) {
+export default function SkillsForm({ skillsData, setSkillsData }) {
   const [isEditing, setIsEditing] = useState(false);
   const [isActive, setIsActive] = useState(false);
 
@@ -15,8 +15,20 @@ export default function SkillsForm({skillsData, setSkillsData}) {
 
   return (
     <>
-      <form action="" className={!isActive ? "disabled" : ''}>
+      <form action="" className={!isActive ? "disabled" : ""}>
         <div>
+          <label htmlFor="type">Type</label>
+          <input
+            type="text"
+            name="type"
+            id="type"
+            value={skillsData.type}
+            onChange={handleChange}
+            maxLength={100}
+          />
+        </div>
+        <div>
+          <label htmlFor="skills">Skills</label>
           <textarea
             name="skills"
             id="skills"

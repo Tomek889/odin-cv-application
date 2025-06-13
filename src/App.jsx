@@ -30,6 +30,7 @@ function App() {
   });
 
   const [skillsData, setSkillsData] = useState({
+    type: "Type",
     skills: "Skill 1, Skill 2, Skill 3, Skill 4, Skill 5",
   });
 
@@ -46,6 +47,10 @@ function App() {
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus ratione in reprehenderit quos dolores blanditiis dolor esse! Commodi omnis quibusdam eaque delectus doloribus! Rem quam odit facere saepe reiciendis dolorum.",
   });
 
+  function handleAdd() {
+
+  }
+
   return (
     <div className="app">
       <div>
@@ -59,7 +64,7 @@ function App() {
         <Form>
           <div className="heading">
             <h2>Education</h2>
-            <span className="material-symbols-outlined">add</span>
+            <span className="material-symbols-outlined" onClick={handleAdd}>add</span>
           </div>
           <EducationForm
             educationData={educationData}
