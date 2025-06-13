@@ -1,11 +1,21 @@
 import { useState } from "react";
 
-export default function SkillsForm({ skillsData, setSkillsData }) {
+export default function SkillsForm({
+  index,
+  skillsData,
+  setSkillsData,
+  allSkills,
+}) {
   const [isEditing, setIsEditing] = useState(false);
   const [isActive, setIsActive] = useState(false);
 
   function handleChange(e) {
-    setSkillsData({ ...skillsData, [e.target.name]: e.target.value });
+    const updated = [...allSkills];
+    updated[index] = {
+      ...updated[index],
+      [e.target.name]: e.target.value,
+    };
+    setSkillsData(updated);
   }
 
   function handleEdit() {

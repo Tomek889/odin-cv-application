@@ -36,10 +36,18 @@ export default function ResumePreview({
         )}
       </div>
       <div className="skills">
-        <h2>Skills</h2>
-        <hr />
-        <h3>{skillsData.type}</h3>
-        <p>{skillsData.skills}</p>
+        {skillsData.length > 0 && (
+          <>
+            <h2>Skills</h2>
+            <hr />
+            {skillsData.map((data, index) => (
+              <div key={index}>
+                <h3>{data.type}</h3>
+                <p>{data.skills}</p>
+              </div>
+            ))}
+          </>
+        )}
       </div>
       <div className="experience">
         <h2>Experience</h2>

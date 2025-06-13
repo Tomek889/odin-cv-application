@@ -38,10 +38,10 @@ function App() {
     },
   ]);
 
-  const [skillsData, setSkillsData] = useState({
+  const [skillsData, setSkillsData] = useState([{
     type: "Type",
     skills: "Skill 1, Skill 2, Skill 3, Skill 4, Skill 5",
-  });
+  }]);
 
   const [experienceData, setExperienceData] = useState({
     name: "Company Name",
@@ -65,6 +65,16 @@ function App() {
         location: "Location",
         startDate: "2022-08",
         endDate: "2025-05",
+      },
+    ]);
+  }
+
+  function handleAddSkills() {
+    setSkillsData([
+      ...skillsData,
+      {
+        type: "Type",
+        skills: "Skill 1, Skill 2, Skill 3, Skill 4, Skill 5",
       },
     ]);
   }
@@ -102,9 +112,22 @@ function App() {
         <Form>
           <div className="heading">
             <h2>Skills</h2>
-            <span className="material-symbols-outlined">add</span>
+            <span
+              className="material-symbols-outlined"
+              onClick={handleAddSkills}
+            >
+              add
+            </span>
           </div>
-          <SkillsForm skillsData={skillsData} setSkillsData={setSkillsData} />
+          {skillsData.map((data, index) => (
+            <SkillsForm
+              key={index}
+              index={index}
+              skillsData={data}
+              allSkills={skillsData}
+              setSkillsData={setSkillsData}
+            />
+          ))}
         </Form>
         <Form>
           <div className="heading">
